@@ -1,12 +1,8 @@
-var valores = [8, 1, 7, 4, 2, 9]
-num.sort()
-
-/*
-for(var pos = 0; pos < valores.length; pos++){
-    console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
+function fatorial(n){
+    var fat = 1
+    for(var c = n; c > 1; c--){
+        fat *= c
+    }
+    return fat
 }
-*/
-
-for(var pos in valores){
-    console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
-}
+console.log(fatorial(5))
