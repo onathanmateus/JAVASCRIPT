@@ -1,8 +1,8 @@
-function parimp(n){
-    if(n%2 == 0){
-        return "Par";
+function fatorial(n){
+    if (n == 1){
+        return 1;
     }else{
-        return "Ímpar";
+        return n*fatorial(n-1)
     }
 }
-console.log(parimp(55555));
+console.log(fatorial(5));
