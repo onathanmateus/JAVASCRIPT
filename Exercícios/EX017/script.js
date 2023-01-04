@@ -1,12 +1,12 @@
-/* 
-var c =1
-while (c <= 5){
-    console.log(c)
-    c++
+var valores = [8, 1, 7, 4, 2, 9]
+num.sort()
+
+/*
+for(var pos = 0; pos < valores.length; pos++){
+    console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
 }
 */
-console.log("Vai começar!");
-for(var c = 1;c <= 5;c++){
-    console.log(c)
+
+for(var pos in valores){
+    console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
 }
-console.log("FIM!")
