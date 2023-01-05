@@ -18,6 +18,6 @@ console.log(_nome);
 var nome5 = 'ASD3';
 console.log(nome5);
 
-//Dica: se o nome da variável for grande, é bom deixar a primeira letra de cada palavra em maiúculo, isso melhora a leitura do código
+//Dica: se o nome da variável for grande, é bom deixar a primeira letra de cada palavra em maiúculo, isso melhora na leitura do código
 var MeuPrimeiroNome = 'Nathan';
 console.log(MeuPrimeiroNome);
