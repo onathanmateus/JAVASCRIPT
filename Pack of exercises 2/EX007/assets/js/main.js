@@ -20,6 +20,15 @@ addEventListener("submit", function (e) {
   console.log(imc);
 });
 
+function setResult(msg, isValid) {
+  const result = document.querySelector("#result");
+  result.innerHTML = "";
+
+  const p = createP();
+  p.innerHTML = msg;
+  result.appendChild(p);
+}
+
 function getImc(weight, height) {
   const imc = weight / Math.pow(height, 2);
   return imc.toFixed(2);
@@ -28,13 +37,4 @@ function getImc(weight, height) {
 function createP() {
   const p = document.createElement("p");
   return p;
-}
-
-function setResult(msg, isValid) {
-  const result = document.querySelector("#result");
-  result.innerHTML = "";
-
-  const p = createP();
-  p.innerHTML = msg;
-  result.appendChild(p);
 }
