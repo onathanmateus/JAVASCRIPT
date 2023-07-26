@@ -24,7 +24,7 @@ addEventListener("submit", function (e) {
   console.log(nivelImc);
 });
 
-function getLevelImc(imc) {
+const getLevelImc = (imc) => {
   const level = [
     "Abaixo do peso",
     "Peso normal",
@@ -40,9 +40,9 @@ function getLevelImc(imc) {
   if (imc >= 24.9) return level[2];
   if (imc >= 18.5) return level[1];
   if (imc <= 18.5) return level[0];
-}
+};
 
-function setResult(msg, isValid) {
+const setResult = (msg, isValid) => {
   const result = document.querySelector("#result");
   result.innerHTML = "";
 
@@ -56,14 +56,14 @@ function setResult(msg, isValid) {
 
   p.innerHTML = msg;
   result.appendChild(p);
-}
+};
 
-function getImc(weight, height) {
+const getImc = (weight, height) => {
   const imc = weight / Math.pow(height, 2);
   return imc.toFixed(2);
-}
+};
 
-function createP() {
+const createP = () => {
   const p = document.createElement("p");
   return p;
-}
+};
