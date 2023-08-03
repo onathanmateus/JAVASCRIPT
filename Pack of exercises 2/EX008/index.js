@@ -8,6 +8,6 @@ const person = {
   },
 };
 
-const { name, surname, ...rest } = person;
+const { name: namePerson, surname, ...rest } = person;
 
-console.log(name, surname, rest);
+console.log(namePerson, surname, rest);
