@@ -19,6 +19,7 @@ document.addEventListener("click", function (e) {
   if (el.classList.contains("clear-button")) {
     el.parentElement.remove();
   }
+  saveTasks();
 });
 
 const createTask = (inputText) => {
@@ -27,6 +28,7 @@ const createTask = (inputText) => {
   tasks.appendChild(li);
   clearInput();
   createClearButton(li);
+  saveTasks();
 };
 
 const createClearButton = (li) => {
@@ -45,4 +47,24 @@ const clearInput = () => {
 const createLi = () => {
   const li = document.createElement("li");
   return li;
+};
+
+const saveTasks = () => {
+  const tasksLi = tasks.querySelectorAll("li");
+  const listOfTasks = [];
+  for (let task of tasksLi) {
+    let taskText = task.innerText;
+    taskText = taskText.replace("Apagar", "").trim();
+    listOfTasks.push(taskText);
+  }
+  const tasksJSON = JSON.stringify(listOfTasks);
+  localStorage.setItem("tasks", tasksJSON);
+};
+
+const addSavedTasks = () => {
+  const tasks = localStorage.getItem("tasks");
+  const listOfTasks = JSON.parse(tasks);
+  for (let task of listOfTasks) {
+    createTask(task);
+  }
 };
