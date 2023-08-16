@@ -68,3 +68,4 @@ const addSavedTasks = () => {
     createTask(task);
   }
 };
+addSavedTasks();
