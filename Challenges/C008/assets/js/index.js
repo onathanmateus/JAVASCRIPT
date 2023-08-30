@@ -20,11 +20,13 @@ function createCalculator() {
         calculation = eval(calculation);
         if (!calculation) {
           alert("Conta Inválida !!!");
+          this.display.value = "";
           return;
         }
         this.display.value = String(calculation);
       } catch (error) {
         alert("Conta Inválida !!!");
+        this.display.value = "";
       }
     },
 
