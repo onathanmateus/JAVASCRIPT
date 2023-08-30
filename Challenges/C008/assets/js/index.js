@@ -1,7 +1,6 @@
 function createCalculator() {
   return {
     display: document.querySelector(".display"),
-
     begin() {
       this.buttonClick();
     },
@@ -15,10 +14,23 @@ function createCalculator() {
       this.display.value += value;
     },
 
+    doACalculation() {
+      let calculation = this.display.value;
+      try {
+        calculation = eval(calculation);
+        if (!calculation) {
+          alert("Conta Inválida !!!");
+          return;
+        }
+        this.display.value = String(calculation);
+      } catch (error) {
+        alert("Conta Inválida !!!");
+      }
+    },
+
     buttonClick() {
       document.addEventListener("click", (e) => {
         const el = e.target;
-
         if (el.classList.contains("btn-num")) {
           this.buttonOnDisplay(el.innerText);
         }
@@ -27,6 +39,9 @@ function createCalculator() {
         }
         if (el.classList.contains("btn-del")) {
           this.deleteOne();
+        }
+        if (el.classList.contains("btn-eq")) {
+          this.doACalculation();
         }
       });
     },
